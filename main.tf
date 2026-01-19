@@ -1,9 +1,12 @@
+# ou
+code main.tf
 resource "azurerm_resource_group" "main" {
   name = "rg1-${var.application_name}-${var.environment_name}"
 
   location = var.primary_location
 }
 
+<<<<<<< HEAD
 resource random_string "suffix" {
 
   length= 10
@@ -26,3 +29,15 @@ resource "azurerm_storage_container" "tfstate" {
   storage_account_name    = azurerm_storage_account.main.name
   container_access_type = "private"
 }
+=======
+
+
+resource "azurerm_log_analytics_workspace" "main" {
+  name                = "log-${var.application_name}-${var.environment_name}"
+  location            = var.primary_location
+  resource_group_name = azurerm_resource_group.main.name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+  
+}
+>>>>>>> 62db4a9 (Initial commit)

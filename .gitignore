@@ -5,11 +5,11 @@
 .terraform/
 *.tfstate
 *.tfstate.*
+terraform.tfstate.d/
 .terraform.lock.hcl
 
 # Variables sensibles
 *.tfvars
-terraform.tfvars
 
-# Environnements
-env/
+# Providers
+*.zip
